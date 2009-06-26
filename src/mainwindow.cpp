@@ -229,6 +229,7 @@ void MainWindow::saveSettings( void )
 void MainWindow::rerenderAndUpdatePreview()
 {
 	m_cachedPreview = renderPage();
+	m_previewItem->setPixmap( QPixmap::fromImage( m_cachedPreview ) );
 	updateAutoZoom();
 }
 
@@ -237,12 +238,12 @@ void MainWindow::rerenderAndUpdatePreview()
 
 void MainWindow::updatePreview()
 {
-	QImage img = m_cachedPreview;
-	img = img.scaled( img.width() * ui->zoomSlider->value() / 100,
-				img.height()* ui->zoomSlider->value() / 100 );
-	//m_previewLabel->setFixedSize( img.size() );
-	m_previewItem->setPixmap( QPixmap::fromImage( img ) );
-	m_scene->setSceneRect( img.rect() );
+
+	m_previewItem->setTransform(
+		QTransform().scale( ui->zoomSlider->value() / 1000.0,
+					ui->zoomSlider->value() / 1000.0 ) );
+	m_scene->setSceneRect( QRect( 0, 0, m_cachedPreview.width() * ui->zoomSlider->value() / 1000,
+				m_cachedPreview.height()* ui->zoomSlider->value() / 1000 ) );
 }
 
 
@@ -287,8 +288,8 @@ void MainWindow::updateAutoZoom()
 {
 	if( ui->autoZoom->isChecked() )
 	{
-		const int sw = ( ui->previewArea->width() - 2 ) * 100 / m_cachedPreview.width();
-		const int sh = ( ui->previewArea->height() - 2 ) * 100 / m_cachedPreview.height();
+		const int sw = ( ui->previewArea->width() - 2 ) * 1000 / m_cachedPreview.width();
+		const int sh = ( ui->previewArea->height() - 2 ) * 1000 / m_cachedPreview.height();
 		ui->zoomSlider->setValue( qMin( sw, sh ) );
 		ui->autoZoom->setChecked( true );
 	}

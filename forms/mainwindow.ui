@@ -157,10 +157,10 @@
        <item row="1" column="0">
         <widget class="QSlider" name="zoomSlider">
          <property name="minimum">
-          <number>10</number>
+          <number>100</number>
          </property>
          <property name="maximum">
-          <number>100</number>
+          <number>1000</number>
          </property>
          <property name="singleStep">
           <number>1</number>
@@ -169,7 +169,7 @@
           <number>1</number>
          </property>
          <property name="value">
-          <number>100</number>
+          <number>1000</number>
          </property>
          <property name="tracking">
           <bool>true</bool>
