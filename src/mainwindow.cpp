@@ -63,7 +63,8 @@ MainWindow::MainWindow( QWidget * _parent ) :
 
 	connect( ui->actionSave, SIGNAL( triggered() ),
 			this, SLOT( saveSettings() ) );
-
+	connect( ui->actionAbout, SIGNAL( triggered() ),
+			this, SLOT( about() ) );
 	connect( ui->barcodeScale, SIGNAL( valueChanged( double ) ),
 			this, SLOT( rerenderAndUpdatePreview() ) );
 
@@ -341,4 +342,13 @@ void MainWindow::print( QPrinter * _target )
 	painter.drawImage( offX, offY, img );
 	painter.end();
 }
+
+
+
+
+void MainWindow::about( void )
+{
+	AboutDialog( this ).exec();
+}
+
 

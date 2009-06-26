@@ -28,7 +28,7 @@
 #include <QtGui/QImage>
 #include <QtGui/QMainWindow>
 
-//#include "ui_about.h"
+#include "ui_about.h"
 
 class QGraphicsScene;
 class QGraphicsPixmapItem;
@@ -43,7 +43,7 @@ namespace Ui
 class QLabel;
 
 
-/*
+
 class AboutDialog : public QDialog, public Ui::AboutDialog
 {
 public:
@@ -55,7 +55,8 @@ public:
 			aboutTextLabel->text().arg( "0.1.0" ) );
 	}
 } ;
-*/
+
+
 
 class MainWindow : public QMainWindow
 {
@@ -80,7 +81,7 @@ private slots:
 	void print();
 	void updateAutoZoom();
 	void updateZoom();
-
+	void about();
 
 private:
 	void loadSettingsFile( const QString & _file );
