@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2009 Tobias Doerffel / Electronic Design Chemnitz
  *
- * This file is part of QDataMatrix
+ * This file is part of QDataMatrix - http://qdatamatrix.sourceforge.net
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public

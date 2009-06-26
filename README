@@ -1,0 +1,51 @@
+QDataMatrix
+===========
+
+Copyright (c) 2009 Tobias Doerffel, Electronic Design Chemnitz
+
+http://www.ed-chemnitz.de
+http://qdatamatrix.sourceforge.net
+
+
+This program is free software; you can redistribute it and/or modify 
+it under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+
+
+What is QDataMatrix?
+----------------
+
+QDataMatrix is a graphical user interface for easily printing a series of 2D barcode labels (DataMatrix standard). Lots of options allow full customization of label layout. Furthermore you can export the output as PDF or PNG.
+
+
+Requirements
+------------
+
+* Qt4 SDK
+* libdmtx
+
+
+
+Building
+--------
+
+See INSTALL for information on how to build QDataMatrix.
+
+
+
+Contact
+-------
+
+Any suggestions, patches etc. are welcome. Simply send a mail to
+tobias.doerffel@gmail.com.
