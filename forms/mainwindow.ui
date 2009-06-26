@@ -14,7 +14,7 @@
    <string>QDataMatrix</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="data/qdatamatrix.qrc">
+   <iconset resource="../data/qdatamatrix.qrc">
     <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -53,7 +53,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Filtersensor-2 2010 HwV:1.1 SwV:0.0 SN:2009%.5d</string>
+          <string>Serial: 1234 %.5d</string>
          </property>
         </widget>
        </item>
@@ -73,7 +73,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>2009%.5d</string>
+          <string>1234 %.5d</string>
          </property>
         </widget>
        </item>
@@ -129,7 +129,7 @@
           <string>Print</string>
          </property>
          <property name="icon">
-          <iconset resource="data/qdatamatrix.qrc">
+          <iconset resource="../data/qdatamatrix.qrc">
            <normaloff>:/images/document-print.png</normaloff>:/images/document-print.png</iconset>
          </property>
         </widget>
@@ -146,7 +146,7 @@
           <string>Export</string>
          </property>
          <property name="icon">
-          <iconset resource="data/qdatamatrix.qrc">
+          <iconset resource="../data/qdatamatrix.qrc">
            <normaloff>:/images/document-save.png</normaloff>:/images/document-save.png</iconset>
          </property>
         </widget>
@@ -179,7 +179,7 @@
        <item row="1" column="1">
         <widget class="QToolButton" name="autoZoom">
          <property name="icon">
-          <iconset resource="data/qdatamatrix.qrc">
+          <iconset resource="../data/qdatamatrix.qrc">
            <normaloff>:/images/document-preview.png</normaloff>:/images/document-preview.png</iconset>
          </property>
          <property name="iconSize">
@@ -496,7 +496,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuit">
    <property name="icon">
-    <iconset resource="data/qdatamatrix.qrc">
+    <iconset resource="../data/qdatamatrix.qrc">
      <normaloff>:/images/application-exit.png</normaloff>:/images/application-exit.png</iconset>
    </property>
    <property name="text">
@@ -505,7 +505,7 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="data/qdatamatrix.qrc">
+    <iconset resource="../data/qdatamatrix.qrc">
      <normaloff>:/images/document-open.png</normaloff>:/images/document-open.png</iconset>
    </property>
    <property name="text">
@@ -517,7 +517,7 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset resource="data/qdatamatrix.qrc">
+    <iconset resource="../data/qdatamatrix.qrc">
      <normaloff>:/images/document-save.png</normaloff>:/images/document-save.png</iconset>
    </property>
    <property name="text">
@@ -529,7 +529,7 @@
   </action>
  </widget>
  <resources>
-  <include location="data/qdatamatrix.qrc"/>
+  <include location="../data/qdatamatrix.qrc"/>
  </resources>
  <connections>
   <connection>
