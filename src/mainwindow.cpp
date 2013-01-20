@@ -1,7 +1,7 @@
 /*
  * mainwindow.cpp - implementation of MainWindow class
  *
- * Copyright (c) 2009 Tobias Doerffel / Electronic Design Chemnitz
+ * Copyright (c) 2009-2013 Tobias Doerffel / Electronic Design Chemnitz
  *
  * This file is part of QDataMatrix - http://qdatamatrix.sourceforge.net
  *
@@ -216,10 +216,12 @@ void MainWindow::saveSettings( void )
 	f.setAcceptMode( QFileDialog::AcceptSave );
 	if( f.exec() && !f.selectedFiles().isEmpty() )
 	{
+#ifndef QT_NO_SETTINGS
 		QSettings s( f.selectedFiles().first(), QSettings::IniFormat );
 		s.setValue( "barcode/text", ui->barcodeText->text() );
 		s.setValue( "barcode/label", ui->barcodeLabel->text() );
 		s.sync();
+#endif
 	}
 }
 
@@ -258,9 +260,11 @@ void MainWindow::save()
 	{
 		if( ui->outputFormat->currentText() == "PDF" )
 		{
+#ifndef QT_NO_PRINTER
 			QPrinter printer( QPrinter::HighResolution );
 			printer.setOutputFileName( f.selectedFiles().first() );
 			print( &printer );
+#endif
 		}
 		else
 		{
@@ -274,11 +278,13 @@ void MainWindow::save()
 
 void MainWindow::print()
 {
+#ifndef QT_NO_PRINTER
 	QPrintDialog p( this );
 	if( p.exec() )
 	{
 		print( p.printer() );
 	}
+#endif
 }
 
 
@@ -310,9 +316,11 @@ void MainWindow::updateZoom()
 
 void MainWindow::loadSettingsFile( const QString & _file )
 {
+#ifndef QT_NO_SETTINGS
 	QSettings s( _file, QSettings::IniFormat );
 	ui->barcodeText->setText( s.value( "barcode/text" ).toString() );
 	ui->barcodeLabel->setText( s.value( "barcode/label" ).toString() );
+#endif
 }
 
 
@@ -333,6 +341,7 @@ int MainWindow::convertToPx( int _v )
 
 void MainWindow::print( QPrinter * _target )
 {
+#ifndef QT_NO_PRINTER
 	_target->setResolution( ui->dpi->value() );
 	QImage img = renderPage( true );
 	QPainter painter( _target );
@@ -342,6 +351,7 @@ void MainWindow::print( QPrinter * _target )
 				( _target->paperRect().height() - _target->pageRect().height() ) / 2 );
 	painter.drawImage( offX, offY, img );
 	painter.end();
+#endif
 }
 
 

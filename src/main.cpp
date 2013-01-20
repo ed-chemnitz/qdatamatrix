@@ -1,7 +1,7 @@
 /*
  * main.cpp - main file for QDataMatrix
  *
- * Copyright (c) 2009 Tobias Doerffel / Electronic Design Chemnitz
+ * Copyright (c) 2009-2013 Tobias Doerffel / Electronic Design Chemnitz
  *
  * This file is part of QDataMatrix - http://qdatamatrix.sourceforge.net
  *
@@ -28,12 +28,12 @@
 
 int main( int argc, char *argv[] )
 {
-	QApplication::setGraphicsSystem( "raster" );
-	QApplication app( argc, argv );
+	QApplication *app = new QApplication(argc, argv);
+	app->setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
 
-	MainWindow m;
-	m.show();
+	MainWindow* m = new MainWindow;
+	m->show();
 
-	return app.exec();
+	app->exec();
 }
 

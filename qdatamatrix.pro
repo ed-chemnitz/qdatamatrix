@@ -1,10 +1,13 @@
 # -------------------------------------------------
 # Project created by QtCreator 2009-04-15T09:46:54
 # -------------------------------------------------
-QT += core \
-    gui
 TARGET = qdatamatrix
-CONFIG += gui
+
+!emscripten {
+	QT += core gui
+	CONFIG += gui
+}
+
 win32:LIBS += -L. \
     -ldmtx
 unix:LIBS += -ldmtx
