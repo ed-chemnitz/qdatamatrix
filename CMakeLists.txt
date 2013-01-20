@@ -36,9 +36,12 @@ SET(qdatamatrix_SOURCES src/main.cpp
 SET(qdatamatrix_INCLUDES src/mainwindow.h)
 
 IF(WIN32)
-	INSTALL(FILES ${QT_BINARY_DIR}/QtCore4.dll ${QT_BINARY_DIR}/QtGui4.dll ${QT_BINARY_DIR}/mingwm10.dll ${CMAKE_SOURCE_DIR}/libdmtx.dll DESTINATION .)
+	INSTALL(FILES
+				${QT_BINARY_DIR}/QtCore4.dll
+				${QT_BINARY_DIR}/QtGui4.dll
+				${QT_BINARY_DIR}/dmtx.dll
+				DESTINATION .)
 	SET(WINRC "${CMAKE_BINARY_DIR}/qdatamatrixrc.obj")
-	#	SET(WINDRES /opt/mingw32/bin/i586-pc-mingw32-windres)
 	ADD_CUSTOM_COMMAND(OUTPUT ${WINRC}
 			COMMAND ${WINDRES}
 				-I${CMAKE_SOURCE_DIR}

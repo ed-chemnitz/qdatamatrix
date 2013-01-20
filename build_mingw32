@@ -1,4 +1,6 @@
 MINGW=/opt/mingw32
 export PATH=$PATH:$MINGW/bin
-cmake .. -DCMAKE_TOOLCHAIN_FILE=cmake/Win32Toolchain-CC.cmake
+export CFLAGS="-march=pentium3 -mtune=generic"
+export CXXFLAGS="$CFLAGS"
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/Win32Toolchain.cmake -DCMAKE_MODULE_PATH=`pwd`/../cmake/
 
