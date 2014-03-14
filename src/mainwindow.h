@@ -25,8 +25,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtGui/QImage>
-#include <QtGui/QMainWindow>
+#include <QImage>
+#include <QMainWindow>
 
 #include "ui_about.h"
 
@@ -41,7 +41,7 @@ namespace Ui
 
 
 class QLabel;
-
+class QPrinter;
 
 
 class AboutDialog : public QDialog, public Ui::AboutDialog

@@ -22,18 +22,18 @@
  *
  */
 
-#include <QtCore/QSettings>
-#include <QtCore/QDebug>
-#include <QtCore/QTimer>
-#include <QtGui/QFileDialog>
-#include <QtGui/QFont>
-#include <QtGui/QGraphicsPixmapItem>
-#include <QtGui/QGraphicsScene>
-#include <QtGui/QMessageBox>
-#include <QtGui/QPainter>
-#include <QtGui/QPrinter>
-#include <QtGui/QPrintDialog>
-#include <QtGui/QScrollBar>
+#include <QSettings>
+#include <QDebug>
+#include <QTimer>
+#include <QFileDialog>
+#include <QFont>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
+#include <QMessageBox>
+#include <QPainter>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QScrollBar>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -157,7 +157,7 @@ QImage MainWindow::renderPage( bool no_margin )
 		QString label = QString().sprintf( barcodeLabel.toUtf8().constData(), seriennummer );
 
 		// string codieren
-		char * txtStr = qstrdup( txt.toAscii().constData() );
+		char * txtStr = qstrdup( txt.toLatin1().constData() );
 		dmtxEncodeDataMatrix( enc, txt.size(), (unsigned char *) txtStr );
 		delete[] txtStr;
 

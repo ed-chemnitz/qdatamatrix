@@ -4,8 +4,7 @@
 TARGET = qdatamatrix
 
 !emscripten {
-	QT += core gui
-	CONFIG += gui
+	QT += core gui widgets printsupport^M
 }
 
 win32:LIBS += -L. \
