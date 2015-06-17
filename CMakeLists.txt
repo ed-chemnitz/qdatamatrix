@@ -18,9 +18,8 @@ IF(VERSION_SUFFIX)
 ENDIF(VERSION_SUFFIX)
 
 # check for Qt4
-SET(QT_MIN_VERSION "4.4.0")
+SET(QT_MIN_VERSION "4.4.0" COMPONENTS QtCore QtGui)
 FIND_PACKAGE(Qt4 REQUIRED)
-SET(QT_QTGUI_INCLUDE_DIR "")
 INCLUDE(${QT_USE_FILE})
 
 
@@ -50,7 +49,7 @@ IF(WIN32)
 			DEPENDS ${CMAKE_BINARY_DIR}/qdatamatrix.rc)
 ENDIF(WIN32)
 
-SET(qdatamatrix_UI forms/mainwindow.ui)
+SET(qdatamatrix_UI forms/mainwindow.ui forms/about.ui)
 
 QT4_WRAP_CPP(qdatamatrix_MOC_out ${qdatamatrix_INCLUDES})
 QT4_WRAP_UI(qdatamatrix_UIC_out ${qdatamatrix_UI})
