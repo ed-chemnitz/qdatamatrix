@@ -1,10 +1,7 @@
-# -------------------------------------------------
-# Project created by QtCreator 2009-04-15T09:46:54
-# -------------------------------------------------
 TARGET = qdatamatrix
 
 !emscripten {
-	QT += core gui widgets printsupport^M
+	QT += core gui widgets printsupport
 }
 
 win32:LIBS += -L. \
